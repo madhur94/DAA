@@ -21,4 +21,23 @@ def knight_tour(board,row,col,moves_count,N,row_moves,col_moves):
         board[next_row][next_col] = -1
         
     return False      
-          
+
+    def main():
+    N = int(input("Enter the size of the board (N x N): "))
+    start_row = int(input("Enter the starting row (0-indexed): "))
+    start_col = int(input("Enter the starting column (0-indexed): "))
+
+    board = [[-1 for _ in range(N)] for _ in range(N)]
+    board[start_row][start_col] = 0
+
+    # All possible moves for the knight
+    row_moves = [-2, -1, 1, 2, 2, 1, -1, -2]
+    col_moves = [1, 2, 2, 1, -1, -2, -2, -1]
+
+    if solve_knights_tour(board, start_row, start_col, 1, N, row_moves, col_moves):
+        print_board(board, N)
+    else:
+        print("Solution does not exist.")
+
+if __name__ == "__main__":
+    main()
