@@ -30,7 +30,7 @@ def knight_tour(board,row,col,moves_count,N,row_moves,col_moves):
     board = [[-1 for _ in range(N)] for _ in range(N)]
     board[start_row][start_col] = 0
 
-    # All possible moves for the knight
+    
     row_moves = [-2, -1, 1, 2, 2, 1, -1, -2]
     col_moves = [1, 2, 2, 1, -1, -2, -2, -1]
 
